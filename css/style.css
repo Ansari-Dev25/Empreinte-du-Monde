@@ -5,8 +5,8 @@
 
 :root {
     --main-color: #0065fc;
-    --main-bg-color: #f2f2f2;
-    --filter-bg-color: #deebff;
+    --main-bg-color: #f7f0e7;
+    --filter-bg-color: #f7f0e7;
 }
 
 .fa-solid {
@@ -56,36 +56,152 @@ body {
 
 /* HEADER */
 header {
-    height: 79px;
-}
-
-.header-group {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-}
-
-.logo {
-    display: flex;
     align-items: center;
+    border-radius: 0 0 15px 15px;
+    border-bottom: 1px solid #e0e0e0; 
+    height: auto; 
+    background: linear-gradient(to bottom, #87CEEB, #e0f7fa); /* Dégradé bleu ciel */
+    background-size: cover; /* L'image couvre tout le header */
+    background-position: center; /* Centrer le contenu */
+    color: white; /* Assurez-vous que le texte est lisible */
+    padding: 20px; /* Ajustez l'espacement selon le besoin */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre douce */
 }
 
+
+.header-container {
+    height: 120px; /* Ajustez selon vos besoins */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f4ede4 0%, #eae6e1 100%); /* Dégradé léger */
+    border-bottom: 2px solid #ddd; /* Ajouter une séparation subtile */
+
+}
+
+
+/* SLOGAN */
+.slogan {
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+
+
+
+/* LOGO */
 .logo img {
-    width: 61.09px;
-    height: 19px;
+    width: 80px; 
+    margin-bottom: 10px;
 }
 
-/* MENU */
+
+
+
+/* MENU NAVIGATION */
 .menu-nav {
+    position: relative;
+    width: auto; /* Ajuste automatiquement selon le contenu */
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0px 25px;
-    gap: 68px;
+    background-color: #f9f4ef; /* Match header background */
+    height: 50px; /* Ajuster la hauteur pour correspondre au header */
+    padding: 0 20px; /* Ajouter de l'espacement interne */
+    border-radius: 10px; /* Coins arrondis pour le cadre */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-nav a {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Espacement horizontal */
+    transition: color 0.3s ease-in-out; /* Animation fluide */
+    display: inline-block;
+}
+
+.menu-nav a:hover {
+    color: var(--main-color); /* Couleur d'accentuation au survol */
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.menu-nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionner juste en dessous */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 10;
+    width: 200px; /* Largeur ajustée pour éviter un cadre trop grand */
+}
+
+.menu-nav .links-bar:hover .dropdown {
+    display: block;
+}
+
+.menu-nav .dropdown li {
+    margin: 0;
+}
+
+.menu-nav .dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, text-decoration 0.3s ease-in-out;
+}
+
+.menu-nav .dropdown li a:hover {
+    background-color: #f0f0f0;
+    color: var(--main-color);
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.cta-button .button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button .button:hover {
+    background-color: #e64a19;
 }
 
 .links {
-    width: 113px;
-    height: 21px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links:hover {
+    color: var(--main-color);
 }
 
 a {
@@ -100,13 +216,17 @@ a:hover {
 .links-bar {
     display: flex;
     justify-content: center;
-    width: 50%;
-    align-items: end;
-    padding: 28px;
+    width: auto;
+    align-items: center;
+    padding: 10px; /* Réduction de l'espacement interne */
+    position: relative;
 }
+
 .links-bar:hover {
     border-top: #0065FC 3px solid;
 }
+
+
 
 
 /* INFO GROUP */
@@ -116,34 +236,59 @@ a:hover {
 
 .searchBar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 5px;
+    max-width: 600px;
+    width: 100%; 
+    margin: 0 auto; /* Centre la barre */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.searchBar:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre au survol */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Centre la barre horizontalement */
+    padding: 20px;
 }
 
 .searchBar input {
+    flex: 1; /* Permet à l'input de s'adapter à l'espace disponible */
     border: none;
-    border: 2px solid #F2F2F2;
-    width: 199px;
-    height: 43px;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #333;
+}
+.searchBar input:focus {
+    width: 250px; /* Agrandit la barre */
+    box-shadow: 0 0 5px rgba(0, 101, 252, 0.5); /* Effet lumineux */
+    transition: all 0.3s ease;
+}
+.searchBar input::placeholder {
+    color: #aaaaaa; 
 }
 
 .search-icon {
-    width: 50px;
-    height: 49px;
-    background-color: var(--main-bg-color);
-    border-radius: 15px 0px 0px 15px;
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 0 10px;
+    color: #0065fc;
+    font-size: 18px;
 }
 
 .search-icon i {
     color: black;
 }
 
-.searcForm input {
+.searchForm input {
     height: 49px;
     text-align: center;
     font-weight: bold;
@@ -165,18 +310,22 @@ a:hover {
 }
 
 .searchButton {
-    height: 49px;
-    width: 132px;
-    text-align: center;
-    border-radius: 0px 15px 15px 0px;
-    background-color: #0065FC;
+    background: linear-gradient(90deg, #0065fc, #007bff);
     color: white;
-    border: 1px solid #0065FC;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px; /* Ajoute un espace entre l'input et le bouton */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 101, 252, 0.3); 
+}
+
+.searchButton:hover {
+    background: linear-gradient(90deg, #0053c7, #0065fc); /* Accentuation au survol */
+    transform: scale(1.05); /* Légère mise en avant */
 }
 
 /* FILTRES */
@@ -206,6 +355,9 @@ a:hover {
 
 .filters div:hover {
     background-color: #deebff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
 }
 
 .info {
@@ -227,7 +379,7 @@ a:hover {
     margin-right: 10px;
 }
 
-/****** Hebergements And Populaires ***********/
+/****** Hébergements et Populaires ***********/
 
 .hebergements-and-populaires {
     display: flex;
@@ -236,21 +388,50 @@ a:hover {
 }
 
 .hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
+    background-image: linear-gradient(to bottom, #eafafc, #d7f3f7); /* Dégradé thématique bleu */
     border-radius: 20px;
     padding: 30px;
     box-sizing: border-box;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    color: white; /* Assurez-vous que le texte est lisible */
 }
 
 .hebergements-and-populaires a,
 .activitiesContent a {
-    color: black;
+    color: #003366; /* Ajuster pour correspondre au thème */
+    text-decoration: none;
 }
 
-/****** Hebergements ***********/
+.hebergements-and-populaires a:hover {
+    text-decoration: underline; /* Effet au survol */
+    color: #00000076;
+}
+
+/****** Hébergements ***********/
 
 .hebergements {
     width: 65%;
+}
+
+.hebergements h2 {
+    color: #003366; /* Bleu foncé */
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+}
+
+/* Styles pour "Afficher plus" */
+.hebergements h3 {
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    color: #003366; /* Bleu foncé */
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.hebergements h3:hover {
+    color: #007ACC; /* Bleu clair au survol */
+    text-decoration: underline;
 }
 
 .hebergements-cards {
@@ -263,7 +444,16 @@ a:hover {
 
 .hebergements-cards .card {
     width: 28%;
-    height: 200px;
+    height: 220px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hebergements-cards .card:hover {
+    transform: translateY(-5px); /* Effet de levée */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
 }
 
 .hebergements-cards img {
@@ -271,29 +461,43 @@ a:hover {
     height: 124px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease;
 }
 
-.hebergements-cards .card-content {
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+.hebergements-cards img:hover {
+    transform: scale(1.05); /* Zoom sur l'image */
 }
 
 .hebergements-cards .card-title {
-    margin-top: 5px;
-    margin-bottom: 6px;
+    font-family: "Times New Roman", serif;
+    text-align: center; /* Centre le texte */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px; /* Proximité avec le sous-titre */
+    color: #003366; /* Bleu foncé */
 }
 
 .hebergements-cards .card-subtitle {
-    margin: 0;
+    font-family: "Times New Roman", serif;
+    text-align: center; /* Centre le texte */
+    font-size: 14px; /* Taille du texte */
+    color: #666666; /* Couleur gris clair */
+    margin: 0 0 15px; /* Espace avec les étoiles */
+    white-space: normal; /* Permet au texte de revenir à la ligne */
+    overflow: visible; /* Assure que tout le texte est visible */
+    text-overflow: clip; /* Supprime tout troncature */
 }
+
 
 .hebergements-cards .card-rating {
-    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 4px; /* Espace entre les étoiles */
+    margin-top: 5px; /* Espace avec le sous-titre */
 }
 
-/****** Populaires ***********/
+/* Populaires */
 
 .populaires {
     width: 32%;
@@ -303,18 +507,38 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #003366; /* Bleu foncé */
+    font-family: "Times New Roman", serif; /* Police Times New Roman */
+    font-weight: bold; /* En gras pour un meilleur accent */
+    font-size: 24px; /* Taille ajustée pour correspondre à Hébergements à Marseille */
+    margin-bottom: 20px; /* Espacement sous le titre */
+    text-align: center; /* Aligne le texte au centre */
 }
+
 
 .populaires-cards .card {
     display: flex;
     margin-top: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.populaires-cards .card:hover {
+    transform: translateY(-5px); /* Effet de levée */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
 }
 
 .populaires-cards img {
     width: 33%;
     height: 134px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 15px; /* Coins arrondis sur tous les côtés */
+    transition: transform 0.3s ease;
+}
+
+.populaires-cards img:hover {
+    transform: scale(1.05); /* Zoom sur l'image */
 }
 
 .populaires-cards .card-content {
@@ -324,84 +548,104 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    border-radius: 15px; /* Assurer la cohérence avec les cartes */
 }
 
 .populaires-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
+    color: #003366; /* Bleu foncé */
+    font-family: "Times New Roman", serif; /* Police Times New Roman */
+    font-weight: bold; /* Texte en gras */
 }
 
 .populaires-cards .card-subtitle {
     margin: 0;
+    margin-top: 5px; /* Espacement avec le titre */
+    margin-bottom: 15px; /* Distance avec les étoiles */
+    color: #003366; /* Bleu foncé */
+    font-family: "Times New Roman", serif; /* Police Times New Roman */
+    font-size: 14px; /* Taille ajustée */
 }
 
 .populaires-cards .card-rating {
     margin-bottom: 5px;
 }
 
-/* ACTIVITÉS */
 
-.activitiesSection {
-    padding: 30px;
-    font-size: 14px;
-}
 
-.activitiesContent {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-
-.activitiesContent img {
-    width: 100%;
-    height: 80%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    object-fit: cover;
-}
-
-.activitiesCards {
-    border-radius: 20px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-    background-color: #ffffff;
-    width: 20%;
-}
-
-.activitiesCards-elements {
-    padding-left: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
 
 /* FOOTER */
 
-footer {
+.footer {
     display: flex;
-    background-color: #f2f2f2;
-    height: 163px;
-    margin-top: 30px;
-    justify-content: flex-start;
-    gap: 30px;
-    padding-bottom: 20px;
+    justify-content: space-between; /* Ajuste l'espacement entre les sections */
+    background: linear-gradient(to right, #eaf6fb, #bde4f4); /* Dégradé doux et apaisant */
+    padding: 30px; /* Espace interne plus grand */
+    margin-top: 40px; /* Ajoute un espace généreux avec la section du dessus */
+    border-radius: 15px 15px 0 0; /* Bordures arrondies */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15); /* Ombre subtile pour un effet flottant */
+    color: #003366; /* Texte bleu foncé pour contraster avec le fond */
+    font-family: 'Times New Roman', serif; /* Police pour le texte sauf titres */
 }
 
-footer a {
-    color: black;
+/* Sections */
+.footer-section {
+    flex: 1; /* Permet à chaque section d'avoir une largeur égale */
+    margin: 0 15px; /* Espacement entre les colonnes */
 }
 
-footer div {
-    padding-left: 30px;
-    width: 50%;
+.footer-section h3 {
+    margin-bottom: 15px; /* Espacement sous les titres */
+    font-size: 18px; /* Taille de la police légèrement augmentée */
+    font-weight: bold; /* Titre plus affirmé */
+    text-transform: uppercase; /* Titre en majuscules pour plus de style */
+    color: #005b99; /* Bleu doux pour les titres */
+    font-family: 'Times New Roman', Arial, sans-serif /* Police moderne uniquement pour les titres */
 }
 
-ul {
-    padding-left: 0px;
+.footer-section ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Supprime les marges internes */
 }
 
-li {
-    list-style: none;
-    padding-top: 15px;
+.footer-section ul li {
+    margin-bottom: 10px; /* Espacement entre les liens */
+    font-family: 'Times New Roman', serif; /* Applique Times New Roman */
 }
+
+.footer-section ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #005b99; /* Couleur bleu doux pour les liens par défaut */
+    font-size: 14px; /* Taille de police adaptée */
+    font-family: 'Times New Roman', serif; /* Police pour les liens */
+    transition: color 0.3s ease-in-out; /* Transition fluide pour la couleur */
+}
+
+.footer-section ul li a:hover {
+    color: #007acc; /* Bleu clair au survol */
+    text-decoration: underline; /* Souligne les liens au survol */
+}
+
+.footer-section ul li::before {
+    content: '✈️'; /* Ajout d'un emoji avion */
+    margin-right: 8px; /* Espacement entre l'icône et le texte */
+    color: #005b99; /* Harmonisation de l'icône avec les liens */
+}
+
+/* Ajustement général */
+.footer {
+    background-clip: padding-box; /* Protège le contenu du dégradé */
+}
+
+
+  
+  
+  
+
+
+
+
 
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -495,7 +739,8 @@ li {
     .hebergements-cards .card,
     .activitiesSection {
         width: 100%;
-    }
+        margin-bottom: 20px;   
+     }
 
     .hebergements-and-populaires {
         flex-direction: column-reverse;
@@ -603,3 +848,10 @@ li {
         display: none;
     }
 }
+
+footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
