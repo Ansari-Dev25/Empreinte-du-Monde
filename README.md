@@ -10,9 +10,7 @@ Développer un design moderne avec HTML5, CSS3, et éventuellement d'autres tech
 Hébergements : Recherchez et trouvez des hébergements adaptés à vos besoins.
 Responsive Design : Une interface qui s'adapte parfaitement à tous les appareils.
 Visiter le site web : https://github.com/Ansari-Dev25
-![Capture d'écran 2024-12-30 005229](https://github.com/user-attachments/assets/988a6c4c-c63f-4805-b8cc-3038a4d0786b)
-![image](https://github.com/user-attachments/assets/f712faaf-6fbb-4c97-a852-dcc084b44ea1)
-![image](https://github.com/user-attachments/assets/08b3b1ce-c40c-464b-af99-e5927fdc227c)
+
 
 #ENGLISH
 This project, Empreinte du Monde, was developed as part of my personal work to create an attractive and responsive travel planning website. The current repository contains the prototype code designed to deliver an intuitive and aesthetic user experience.
